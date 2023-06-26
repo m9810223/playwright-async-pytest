@@ -1,0 +1,58 @@
+[project]
+authors = [
+  {name = "m9810223", email = "m9810223@gmail.com"},
+]
+dependencies = [
+  "pytest-playwright==0.3.3", # https://pypi.org/project/pytest-playwright/
+  "pytest-asyncio==0.20.3", # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
+]
+description = "ASYNC Pytest plugin for Playwright"
+license = {text = "MIT"}
+name = "pytest-playwright-async"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "0.0.0"
+
+[project.urls]
+Homepage = "https://github.com/m9810223/playwright-async-pytest"
+Source = "https://github.com/m9810223/playwright-async-pytest"
+
+[tool.semantic_release]
+# https://python-semantic-release.readthedocs.io/en/latest/configuration.html
+build_command = "pip install pdm && pdm build"
+version_toml = "pyproject.toml:project.version"
+
+[project.entry-points.pytest11]
+playwright_async = "pytest_playwright_async"
+
+[tool.pdm.dev-dependencies]
+dev = [
+  "pytest>=7.4.0",
+  "ipython>=8.12.2",
+  "nest-asyncio>=1.5.6",
+]
+
+[tool.pdm.scripts]
+test = "pytest"
+
+[tool.pytest.ini_options]
+addopts = "--exitfirst --failed-first -r fEsxXp --disable-warnings --showlocals --tb=short"
+
+[tool.ruff]
+extend-select = [
+  "W", # pycodestyle Warning
+  "I", # isort
+  "N", # pep8-naming
+  "S", # flake8-bandit
+  "PGH", # pygrep-hooks
+  "TRY", # tryceratops
+]
+ignore = [
+  "E501", # line-too-long
+  "S101", # Use of `assert` detected
+]
+
+[tool.ruff.isort]
+# https://beta.ruff.rs/docs/settings/#isort
+force-single-line = true
+lines-after-imports = 2

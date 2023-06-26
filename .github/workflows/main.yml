@@ -1,0 +1,57 @@
+name: main
+
+on:
+  pull_request_review:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    # if: false
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        py_ver:
+          - "3.11"
+          - "3.10"
+          - "3.9"
+          - "3.8"
+        pw_browser: [chromium]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.py_ver }}
+      - uses: pdm-project/setup-pdm@v3
+      - run: pdm install
+      - run: pdm list --graph
+      - run: pdm run playwright install --with-deps ${{ matrix.pw_browser }}
+      - run: pdm run pytest --browser=${{ matrix.pw_browser }}
+
+  release:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs:
+      - test
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    concurrency: release
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository_username: ${{ secrets.PDM_PUBLISH_USERNAME }}
+          repository_password: ${{ secrets.PDM_PUBLISH_PASSWORD }}
