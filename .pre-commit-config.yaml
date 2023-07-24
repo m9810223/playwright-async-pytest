@@ -4,7 +4,7 @@ repos:
   ### PYTHON
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.4.0
+    rev: v1.4.1
     hooks:
       - id: mypy
         language_version: python3.9
@@ -16,7 +16,7 @@ repos:
         exclude: ^.*\b(migrations)\b.*$ # Django
 
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 23.7.0
     hooks: # https://black.readthedocs.io/en/stable/integrations/source_version_control.html
       - id: black
         language_version: python3.8
@@ -24,8 +24,8 @@ repos:
           - --skip-string-normalization
         exclude: ^.*\b(migrations)\b.*$ # Django
 
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.275
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.280
     hooks: # https://beta.ruff.rs/docs/installation-and-usage/#usage
       - id: ruff
         args:
@@ -46,14 +46,14 @@ repos:
   ### MISC
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+    rev: v2.2.5
     hooks:
       - id: codespell
         args:
           - --skip=**/pnpm-lock.yaml
 
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: v2.9.0
+    rev: v2.10.0
     hooks:
       - id: pretty-format-yaml
         args:
