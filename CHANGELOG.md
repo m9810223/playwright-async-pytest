@@ -2,6 +2,13 @@
 
 
 
+## v0.10.0 (2024-02-06)
+
+### Feature
+
+* feat: release ([`2ba2e3e`](https://github.com/m9810223/playwright-async-pytest/commit/2ba2e3ec1b92addf295b2a0968c0939a0c39a8d4))
+
+
 ## v0.9.0 (2024-02-06)
 
 ### Feature
