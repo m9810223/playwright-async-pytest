@@ -32,7 +32,15 @@ test = "pytest"
 [tool.pytest.ini_options]
 addopts = "--exitfirst --failed-first -r fEsxXp --disable-warnings --showlocals --tb=short"
 
+[tool.black] # https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
+line-length = 100
+skip-string-normalization = true
+
 [tool.ruff]
+line-length = 100
+show-source = true
+fix = true
+show-fixes = true
 extend-select = [
   "W",   # pycodestyle Warning
   "I",   # isort
@@ -46,7 +54,11 @@ ignore = [
   "S101", # Use of `assert` detected
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 # https://beta.ruff.rs/docs/settings/#isort
 force-single-line = true
 lines-after-imports = 2
+known-local-folder = []
+
+[tool.mypy]
+ignore_missing_imports = true
