@@ -1,7 +1,7 @@
 [project]
 authors = [{ name = "m9810223", email = "m9810223@gmail.com" }]
 dependencies = [
-  "pytest-playwright==0.3.3", # https://pypi.org/project/pytest-playwright/
+  "pytest-playwright>=0.3.3,<=0.4.4", # https://pypi.org/project/pytest-playwright/
   "pytest-asyncio==0.20.3",   # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
 ]
 description = "ASYNC Pytest plugin for Playwright"
