@@ -2,6 +2,32 @@
 
 
 
+## v0.6.0 (2024-02-06)
+
+### Feature
+
+* feat: release ([`a9f7aa6`](https://github.com/m9810223/playwright-async-pytest/commit/a9f7aa69e0b309289996e7d565c18f7dc8f2507d))
+
+* feat: release ([`51de49b`](https://github.com/m9810223/playwright-async-pytest/commit/51de49b75b4ae2df3547a0ed87740e606364ce75))
+
+
+## v0.5.0 (2024-02-06)
+
+### Chore
+
+* chore: support Python3.12 ([`96245ea`](https://github.com/m9810223/playwright-async-pytest/commit/96245ea78190049fd34eb56b8b543b8e04f4d03c))
+
+* chore(ci): fix and support Python3.12 ([`09f7eb4`](https://github.com/m9810223/playwright-async-pytest/commit/09f7eb4601f83ed0a14ee608676166f39820cd40))
+
+### Feature
+
+* feat: release ([`7f99039`](https://github.com/m9810223/playwright-async-pytest/commit/7f99039ab93fcede6c4a9a8e43808bc7801161aa))
+
+### Unknown
+
+* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`9439974`](https://github.com/m9810223/playwright-async-pytest/commit/9439974ad2eab1c0fc167ed72337cd8c151779c2))
+
+
 ## v0.4.0 (2024-02-06)
 
 ### Chore
