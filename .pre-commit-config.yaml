@@ -22,7 +22,7 @@ repos:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: abe8946973726245279f972c708ebcd6ae0ec272 # frozen: v0.1.13
+    rev: 1bd02b3569e3ac5cc66552b1336a96a8880d1bae  # frozen: v0.2.1
     hooks: # https://beta.ruff.rs/docs/installation-and-usage/#usage
       - id: ruff
 
@@ -53,7 +53,7 @@ repos:
   ### MISC
 
   - repo: https://github.com/crate-ci/typos
-    rev: ccfb992f93da3684d7dd9a5e7328d80d81dcbc37 # frozen: v1.17.2
+    rev: c9a8c2e546451910cab4b467188a6c4e18a1743d  # frozen: v1.18.1
     hooks:
       - id: typos
 
