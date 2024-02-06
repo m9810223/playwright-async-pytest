@@ -120,9 +120,7 @@ async def context_async(
     failed = request.node.rep_call.failed if hasattr(request.node, 'rep_call') else True
 
     if capture_trace:
-        retain_trace = tracing_option == 'on' or (
-            failed and tracing_option == 'retain-on-failure'
-        )
+        retain_trace = tracing_option == 'on' or (failed and tracing_option == 'retain-on-failure')
         if retain_trace:
             trace_path = _build_artifact_test_folder(pytestconfig, request, 'trace.zip')
             await context.tracing.stop(path=trace_path)
@@ -147,9 +145,7 @@ async def context_async(
     await context.close()
 
     video_option = pytestconfig.getoption('--video')
-    preserve_video = video_option == 'on' or (
-        failed and video_option == 'retain-on-failure'
-    )
+    preserve_video = video_option == 'on' or (failed and video_option == 'retain-on-failure')
     if preserve_video:
         for page in pages:
             video = page.video
