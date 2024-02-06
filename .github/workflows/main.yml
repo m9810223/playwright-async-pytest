@@ -35,8 +35,8 @@ jobs:
 
   release:
     if: ${{ github.ref == 'refs/heads/master' }}
-    needs:
-      - test
+    # needs:
+    #   - test
 
     strategy:
       matrix:
