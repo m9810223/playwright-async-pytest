@@ -2,6 +2,17 @@
 
 
 
+## v0.9.0 (2024-02-06)
+
+### Feature
+
+* feat: release ([`3b0062b`](https://github.com/m9810223/playwright-async-pytest/commit/3b0062bdbbe2636728824213ec659c5097474d5f))
+
+### Unknown
+
+* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`80cb1bd`](https://github.com/m9810223/playwright-async-pytest/commit/80cb1bd5270dff15c8075f0b65719fe4e71987ea))
+
+
 ## v0.8.0 (2024-02-06)
 
 ### Feature
