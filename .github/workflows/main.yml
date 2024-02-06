@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    if: false
+    # if: false
 
     strategy:
       matrix:
@@ -35,8 +35,8 @@ jobs:
 
   release: # https://github.com/python-semantic-release/python-semantic-release/blob/master/.github/workflows/main.yml
     if: ${{ github.ref == 'refs/heads/master' }}
-    # needs:
-    #   - test
+    needs:
+      - test
 
     strategy:
       matrix:
