@@ -2,69 +2,28 @@
 
 
 
-## v0.10.0 (2024-02-06)
+## v0.11.0 (2024-02-25)
 
 ### Feature
 
-* feat: release ([`2ba2e3e`](https://github.com/m9810223/playwright-async-pytest/commit/2ba2e3ec1b92addf295b2a0968c0939a0c39a8d4))
+* feat: release ([`d625fbe`](https://github.com/m9810223/playwright-async-pytest/commit/d625fbe9a1213358bf4bef7472f086e9c938e989))
 
-
-## v0.9.0 (2024-02-06)
-
-### Feature
-
-* feat: release ([`3b0062b`](https://github.com/m9810223/playwright-async-pytest/commit/3b0062bdbbe2636728824213ec659c5097474d5f))
+* feat: release ([`7599bc9`](https://github.com/m9810223/playwright-async-pytest/commit/7599bc9839b647c3d8ed7615626aefd767733704))
 
 ### Unknown
 
-* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`80cb1bd`](https://github.com/m9810223/playwright-async-pytest/commit/80cb1bd5270dff15c8075f0b65719fe4e71987ea))
+* Merge pull request #4 from m9810223/dev
+
+chore ([`57beb67`](https://github.com/m9810223/playwright-async-pytest/commit/57beb67d7f662fd483ab01448a6ebef5c7512810))
 
 
-## v0.8.0 (2024-02-06)
-
-### Feature
-
-* feat: release ([`d42ffc0`](https://github.com/m9810223/playwright-async-pytest/commit/d42ffc0d5d008151fd3150c2d6faaae4f0e3367b))
-
-
-## v0.7.0 (2024-02-06)
-
-### Feature
-
-* feat: release ([`14ca72e`](https://github.com/m9810223/playwright-async-pytest/commit/14ca72e657443da9fea8c197a9feba50c17016a8))
-
-* feat: release ([`cf33cb5`](https://github.com/m9810223/playwright-async-pytest/commit/cf33cb56f17bef089ad8ce6bebd51ec848792054))
-
-
-## v0.6.0 (2024-02-06)
-
-### Feature
-
-* feat: release ([`a9f7aa6`](https://github.com/m9810223/playwright-async-pytest/commit/a9f7aa69e0b309289996e7d565c18f7dc8f2507d))
-
-* feat: release ([`51de49b`](https://github.com/m9810223/playwright-async-pytest/commit/51de49b75b4ae2df3547a0ed87740e606364ce75))
-
-
-## v0.5.0 (2024-02-06)
+## v0.10.0 (2024-02-06)
 
 ### Chore
 
 * chore: support Python3.12 ([`96245ea`](https://github.com/m9810223/playwright-async-pytest/commit/96245ea78190049fd34eb56b8b543b8e04f4d03c))
 
 * chore(ci): fix and support Python3.12 ([`09f7eb4`](https://github.com/m9810223/playwright-async-pytest/commit/09f7eb4601f83ed0a14ee608676166f39820cd40))
-
-### Feature
-
-* feat: release ([`7f99039`](https://github.com/m9810223/playwright-async-pytest/commit/7f99039ab93fcede6c4a9a8e43808bc7801161aa))
-
-### Unknown
-
-* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`9439974`](https://github.com/m9810223/playwright-async-pytest/commit/9439974ad2eab1c0fc167ed72337cd8c151779c2))
-
-
-## v0.4.0 (2024-02-06)
-
-### Chore
 
 * chore(pre-commit): update ([`535360e`](https://github.com/m9810223/playwright-async-pytest/commit/535360eaeb1189d4d55690a77ff9306ad118c425))
 
@@ -76,13 +35,35 @@
 
 ### Feature
 
+* feat: release ([`2ba2e3e`](https://github.com/m9810223/playwright-async-pytest/commit/2ba2e3ec1b92addf295b2a0968c0939a0c39a8d4))
+
+* feat: release ([`3b0062b`](https://github.com/m9810223/playwright-async-pytest/commit/3b0062bdbbe2636728824213ec659c5097474d5f))
+
+* feat: release ([`d42ffc0`](https://github.com/m9810223/playwright-async-pytest/commit/d42ffc0d5d008151fd3150c2d6faaae4f0e3367b))
+
+* feat: release ([`14ca72e`](https://github.com/m9810223/playwright-async-pytest/commit/14ca72e657443da9fea8c197a9feba50c17016a8))
+
+* feat: release ([`cf33cb5`](https://github.com/m9810223/playwright-async-pytest/commit/cf33cb56f17bef089ad8ce6bebd51ec848792054))
+
+* feat: release ([`a9f7aa6`](https://github.com/m9810223/playwright-async-pytest/commit/a9f7aa69e0b309289996e7d565c18f7dc8f2507d))
+
+* feat: release ([`51de49b`](https://github.com/m9810223/playwright-async-pytest/commit/51de49b75b4ae2df3547a0ed87740e606364ce75))
+
+* feat: release ([`7f99039`](https://github.com/m9810223/playwright-async-pytest/commit/7f99039ab93fcede6c4a9a8e43808bc7801161aa))
+
 * feat: release ([`a059d60`](https://github.com/m9810223/playwright-async-pytest/commit/a059d60b51491f870e6f5a0a0bd50d37217e68aa))
+
+* feat: release ([`e23c7b7`](https://github.com/m9810223/playwright-async-pytest/commit/e23c7b7ae1a7ce1829b78b120f97f33263d0b466))
 
 ### Test
 
 * test(tests): fix tests ([`337c787`](https://github.com/m9810223/playwright-async-pytest/commit/337c787609ac8a54f3bcdbfdec4381807ac074b6))
 
 ### Unknown
+
+* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`80cb1bd`](https://github.com/m9810223/playwright-async-pytest/commit/80cb1bd5270dff15c8075f0b65719fe4e71987ea))
+
+* Merge branch &#39;master&#39; of github.com:m9810223/playwright-async-pytest ([`9439974`](https://github.com/m9810223/playwright-async-pytest/commit/9439974ad2eab1c0fc167ed72337cd8c151779c2))
 
 * style ([`d56bde2`](https://github.com/m9810223/playwright-async-pytest/commit/d56bde290160f3e63babe7c8f764a2f2814e4211))
 
@@ -95,13 +76,6 @@ Loosened `pytest-playwright` versions ([`379aac8`](https://github.com/m9810223/p
 * Ran &#39;pdm lock&#39; ([`d06102d`](https://github.com/m9810223/playwright-async-pytest/commit/d06102da5e2665b854b0d8e1e33587d51ef0da82))
 
 * Loosened pytest-playwright versions, since compatible ([`2b10a6b`](https://github.com/m9810223/playwright-async-pytest/commit/2b10a6be91da2cb8a36a61db22d0691b558826d6))
-
-
-## v0.3.0 (2023-07-17)
-
-### Feature
-
-* feat: release ([`e23c7b7`](https://github.com/m9810223/playwright-async-pytest/commit/e23c7b7ae1a7ce1829b78b120f97f33263d0b466))
 
 
 ## v0.2.0 (2023-07-03)
