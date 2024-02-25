@@ -1,0 +1,25 @@
+on:
+  workflow_call:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: python-semantic-release
+      # cancel-in-progress: true
+
+    permissions:
+      # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs#defining-access-for-the-github_token-scopes
+      contents: write
+
+    defaults:
+      run:
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: python-semantic-release/python-semantic-release@v8.7.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

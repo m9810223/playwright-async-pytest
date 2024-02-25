@@ -2,8 +2,6 @@ import os
 import sys
 import typing as t
 
-import pytest
-import pytest_asyncio
 from playwright.async_api import Browser
 from playwright.async_api import BrowserContext
 from playwright.async_api import BrowserType
@@ -11,6 +9,8 @@ from playwright.async_api import Error
 from playwright.async_api import Page
 from playwright.async_api import Playwright
 from playwright.async_api import async_playwright
+import pytest
+import pytest_asyncio
 from pytest_playwright.pytest_playwright import VSCODE_PYTHON_EXTENSION_ID
 from pytest_playwright.pytest_playwright import _build_artifact_test_folder
 from pytest_playwright.pytest_playwright import _is_debugger_attached

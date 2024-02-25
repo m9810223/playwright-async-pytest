@@ -1,0 +1,30 @@
+on:
+  workflow_call:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        # https://github.com/actions/runner-images#available-images
+        os: [ubuntu-latest]
+        py_ver:
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          - "3.9"
+          - "3.8"
+        pw_browser: [chromium]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pdm-project/setup-pdm@v4
+        with:
+          python-version: ${{ matrix.py_ver }}
+          cache: true
+          cache-dependency-path: "**/pdm.lock"
+      - run: pdm install
+      - run: pdm list --graph
+      - run: pdm run playwright install --with-deps ${{ matrix.pw_browser }}
+      - run: pdm run pytest --browser=${{ matrix.pw_browser }}

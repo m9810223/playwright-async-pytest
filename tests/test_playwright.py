@@ -1,12 +1,12 @@
 import typing as t
 
-import pytest
 from playwright.async_api import Browser
 from playwright.async_api import BrowserContext
 from playwright.async_api import BrowserType
 from playwright.async_api import Page
 from playwright.async_api import Playwright
 from playwright.async_api import async_playwright
+import pytest
 
 
 URL = 'https://playwright.dev/'

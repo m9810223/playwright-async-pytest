@@ -1,0 +1,29 @@
+on:
+  workflow_run:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_run
+    workflows:
+      - .github/workflows/main.yml
+    types:
+      - completed
+
+jobs:
+  is-success:
+    if: ${{ github.ref == 'refs/heads/master' }} && ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "is-success"
+
+  pre-commit-autoupdate:
+    uses: ./.github/workflows/_pre-commit-autoupdate.yml
+    permissions:
+      contents: write
+      pull-requests: write
+
+  pdm-publish:
+    needs:
+      - is-success
+    uses: ./.github/workflows/_pdm-publish.yml
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit

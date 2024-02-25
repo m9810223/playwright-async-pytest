@@ -1,27 +1,24 @@
 [project]
-authors = [{ name = "m9810223", email = "m9810223@gmail.com" }]
+name = "pytest-playwright-async"
+version = "0.10.0"
+requires-python = ">=3.8,<3.13"
 dependencies = [
-  "pytest-playwright>=0.3.3,<=0.4.4", # https://pypi.org/project/pytest-playwright/
-  "pytest-asyncio==0.20.3",   # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
+    "pytest-playwright>=0.3.3,<=0.4.4", # https://pypi.org/project/pytest-playwright/
+    "pytest-asyncio==0.20.3",           # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
 ]
 description = "ASYNC Pytest plugin for Playwright"
 license = { text = "MIT" }
-name = "pytest-playwright-async"
 readme = "README.md"
-requires-python = ">=3.8,<3.13"
-version = "0.10.0"
+
+[project.entry-points.pytest11]
+playwright_async = "pytest_playwright_async"
 
 [project.urls]
 Homepage = "https://github.com/m9810223/playwright-async-pytest"
 Source = "https://github.com/m9810223/playwright-async-pytest"
 
-[tool.semantic_release]
-# https://python-semantic-release.readthedocs.io/en/latest/configuration.html
-build_command = "pip install pdm && pdm build"
-version_toml = ["pyproject.toml:project.version"]
-
-[project.entry-points.pytest11]
-playwright_async = "pytest_playwright_async"
+[tool.pdm]
+distribution = true
 
 [tool.pdm.dev-dependencies]
 dev = ["pytest>=7.4.0", "ipython>=8.12.2", "nest-asyncio>=1.5.6"]
@@ -29,36 +26,45 @@ dev = ["pytest>=7.4.0", "ipython>=8.12.2", "nest-asyncio>=1.5.6"]
 [tool.pdm.scripts]
 test = "pytest"
 
-[tool.pytest.ini_options]
-addopts = "--exitfirst --failed-first -r fEsxXp --disable-warnings --showlocals --tb=short"
+[tool.semantic_release]
+# https://python-semantic-release.readthedocs.io/en/latest/configuration.html
+version_toml = ["pyproject.toml:project.version"]
+version_variables = ["src/pytest_playwright_async/__version__.py:VERSION"]
 
-[tool.black] # https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
+[tool.black]
+# https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
 line-length = 100
 skip-string-normalization = true
 
 [tool.ruff]
 line-length = 100
-show-source = true
 fix = true
 show-fixes = true
+output-format = "full"
+
+[tool.ruff.lint]
 extend-select = [
-  "W",   # pycodestyle Warning
-  "I",   # isort
-  "N",   # pep8-naming
-  "S",   # flake8-bandit
-  "PGH", # pygrep-hooks
-  "TRY", # tryceratops
+    "W", # pycodestyle Warning
+    "I", # isort
+    "N", # pep8-naming
+    "S", # flake8-bandit
+    # "PTH", # flake8-use-pathlib
+    "PGH", # pygrep-hooks
+    "TRY", # tryceratops
 ]
 ignore = [
-  "E501", # line-too-long
-  "S101", # Use of `assert` detected
+    "S101", # Use of `assert` detected
 ]
 
 [tool.ruff.lint.isort]
 # https://beta.ruff.rs/docs/settings/#isort
-force-single-line = true
 lines-after-imports = 2
+force-single-line = true
+force-sort-within-sections = true
 known-local-folder = []
 
 [tool.mypy]
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "--exitfirst --failed-first -r fEsxXp --disable-warnings --showlocals --tb=short"
