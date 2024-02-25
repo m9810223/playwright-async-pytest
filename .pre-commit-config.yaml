@@ -1,33 +1,47 @@
+# fail_fast: true
+
 exclude: |
   (?x)^(
+    .*/migrations/.*|
     CHANGELOG.md
   )$
 
 repos:
+  ### LOCAL
+
+  - repo: local
+    hooks:
+      - id: sh -c
+        name: sh -c
+        entry: sh -c
+        args:
+          - echo "pre-commit!"
+        language: system
+        require_serial: true
+        # verbose: true
+
   ### PYTHON
 
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 8cd2d4056637e242709fe09f15a36f0b4b682bda # frozen: v1.8.0
-    hooks:
-      - id: mypy
-        language_version: python3.9
-        # additional_dependencies:
-        #   - types-all
-        # args:
-        #   - --explicit-package-bases
-
   - repo: https://github.com/psf/black
-    rev: e026c93888f91a47a9c9f4e029f3eb07d96375e6 # frozen: 24.1.1
+    rev: 6fdf8a4af28071ed1d079c01122b34c5d587207a  # frozen: 24.2.0
     hooks: # https://black.readthedocs.io/en/stable/integrations/source_version_control.html
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 1bd02b3569e3ac5cc66552b1336a96a8880d1bae  # frozen: v0.2.1
+    rev: cc575a3e5800b42ffbb5182b53d87203b2c4fc26 # frozen: v0.2.2
     hooks: # https://beta.ruff.rs/docs/installation-and-usage/#usage
       - id: ruff
 
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "8cd2d4056637e242709fe09f15a36f0b4b682bda" # frozen: v1.8.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-all]
+        args:
+          - --explicit-package-bases
+
   - repo: https://github.com/asottile/pyupgrade
-    rev: 1bbebc88c6925a4e56fd5446b830b12c38c1c24a # frozen: v3.15.0
+    rev: df17dfa3911b81b4a27190b0eea5b1debc7ffa0a # frozen: v3.15.1
     hooks:
       - id: pyupgrade
 
@@ -40,20 +54,10 @@ repos:
       - id: python-use-type-annotations
       - id: text-unicode-replacement-char
 
-  ### MD
-
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: c9ea83146232fb263effdfe6f222d87f5395b27a # frozen: v0.39.0
-    hooks:
-      - id: markdownlint-fix
-        args:
-          - --disable=line-length
-          - --disable=no-inline-html
-
   ### MISC
 
   - repo: https://github.com/crate-ci/typos
-    rev: c9a8c2e546451910cab4b467188a6c4e18a1743d  # frozen: v1.18.1
+    rev: 15c3fd95cb1c654bec86ec94bef057cc08a1c1c1 # frozen: typos-v0.10.21
     hooks:
       - id: typos
 
@@ -75,15 +79,15 @@ repos:
       - id: check-builtin-literals # requires literal syntax when initializing empty or zero python builtin types.
       - id: check-case-conflict # checks for files that would conflict in case-insensitive filesystems.
       # - id: check-docstring-first # checks a common error of defining a docstring after code.
-      # - id: check-executables-have-shebangs # ensures that (non-binary) executables have a shebang.
-      # - id: check-json # checks json files for parseable syntax.
+      - id: check-executables-have-shebangs # ensures that (non-binary) executables have a shebang.
+      - id: check-json # checks json files for parseable syntax.
       - id: check-shebang-scripts-are-executable # ensures that (non-binary) files with a shebang are executable.
-      # - id: pretty-format-json # sets a standard for formatting json files.
-      #   args:
-      #     - --autofix
-      #     - --indent=2
-      #     - --no-sort-keys
-      #     - --no-ensure-ascii
+      - id: pretty-format-json # sets a standard for formatting json files.
+        args:
+          - --autofix
+          - --indent=2
+          - --no-sort-keys
+          - --no-ensure-ascii
       - id: check-merge-conflict # checks for files that contain merge conflict strings.
       # - id: check-symlinks # checks for symlinks which do not point to anything.
       - id: check-toml # checks toml files for parseable syntax.

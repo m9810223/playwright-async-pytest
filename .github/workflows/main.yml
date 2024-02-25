@@ -1,79 +1,21 @@
-name: main
-
 on:
-  pull_request_review:
   push:
-    branches:
-      - "*"
+  pull_request:
 
 jobs:
+  # permissions -> https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idpermissions
+
   test:
-    # if: false
+    uses: ./.github/workflows/_test.yml
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        py_ver:
-          - "3.12"
-          - "3.11"
-          - "3.10"
-          - "3.9"
-          - "3.8"
-        pw_browser: [chromium]
-    runs-on: ${{ matrix.os }}
+  pre-commit:
+    uses: ./.github/workflows/_pre-commit.yml
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.py_ver }}
-      - uses: pdm-project/setup-pdm@v3
-      - run: pdm install
-      - run: pdm list --graph
-      - run: pdm run playwright install --with-deps ${{ matrix.pw_browser }}
-      - run: pdm run pytest --browser=${{ matrix.pw_browser }}
-
-  release: # https://github.com/python-semantic-release/python-semantic-release/blob/master/.github/workflows/main.yml
+  python-semantic-release:
     if: ${{ github.ref == 'refs/heads/master' }}
+    uses: ./.github/workflows/_python-semantic-release.yml
+    permissions:
+      contents: write
     needs:
       - test
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
-
-    concurrency: release
-    permissions:
-      id-token: write
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - uses: python-semantic-release/python-semantic-release@v8.7.2
-        id: release
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          root_options: "-vv"
-
-      # https://python-semantic-release.readthedocs.io/en/latest/migrating_from_v7.html
-
-      - name: Publish package distributions to PyPI
-        id: pypi-publish
-        if: steps.release.outputs.released == 'true'
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          verbose: true
-          user: ${{ secrets.PYPI_USERNAME }}
-          password: ${{ secrets.PYPI_PASSWORD }}
-
-      - name: Publish package distributions to GitHub Releases
-        id: github-release
-        if: steps.release.outputs.released == 'true'
-        uses: python-semantic-release/upload-to-gh-release@main
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.release.outputs.tag }}
+      - pre-commit
