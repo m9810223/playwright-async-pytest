@@ -1,7 +1,7 @@
 [project]
-name = "pytest-playwright-async"
+name = "pytest_playwright_async"
 version = "0.10.0"
-requires-python = ">=3.8,<3.13"
+requires-python = ">=3.8"
 dependencies = [
     "pytest-playwright>=0.3.3,<=0.4.4", # https://pypi.org/project/pytest-playwright/
     "pytest-asyncio==0.20.3",           # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
