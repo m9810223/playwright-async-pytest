@@ -13,12 +13,6 @@ jobs:
     steps:
       - run: echo "is-success"
 
-  pre-commit-autoupdate:
-    uses: ./.github/workflows/_pre-commit-autoupdate.yml
-    permissions:
-      contents: write
-      pull-requests: write
-
   pdm-publish:
     needs:
       - is-success
