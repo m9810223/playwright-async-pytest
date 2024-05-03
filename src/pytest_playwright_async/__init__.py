@@ -152,7 +152,7 @@ async def context_async(
             if not video:
                 continue
             try:
-                video_path = video.path()
+                video_path = await video.path()
                 file_name = os.path.basename(video_path)
                 await video.save_as(
                     path=_build_artifact_test_folder(pytestconfig, request, file_name)
