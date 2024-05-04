@@ -2,6 +2,23 @@
 
 
 
+## v0.12.0 (2024-05-04)
+
+### Feature
+
+* feat: Update .pre-commit-config.yaml ([`f0bc549`](https://github.com/m9810223/playwright-async-pytest/commit/f0bc54918c5ed82c4a636ba90e4258adee064548))
+
+### Unknown
+
+* Merge pull request #6 from astronomer/video-fix
+
+Fix video collection with await video.path() ([`d76c09b`](https://github.com/m9810223/playwright-async-pytest/commit/d76c09b11981a7c9079e16a127719a0cee018960))
+
+* await video.path() ([`0a5e6a6`](https://github.com/m9810223/playwright-async-pytest/commit/0a5e6a62373e046ec9bd237ca83f3e85e5929d42))
+
+* chore ([`f9890de`](https://github.com/m9810223/playwright-async-pytest/commit/f9890de71fbb342b8ff0d72cd3e3d4263e88fdca))
+
+
 ## v0.11.0 (2024-02-25)
 
 ### Feature
