@@ -2,6 +2,17 @@
 
 
 
+## v0.13.0 (2024-05-21)
+
+### Feature
+
+* feat: loosen deps version ([`e79bf8e`](https://github.com/m9810223/playwright-async-pytest/commit/e79bf8e8fd8482fc4f371c0fd12f941192c0bd36))
+
+### Unknown
+
+* Update pyproject.toml ([`d20046f`](https://github.com/m9810223/playwright-async-pytest/commit/d20046f32934d326fe3ecc79a6fb1e01fc465d75))
+
+
 ## v0.12.0 (2024-05-04)
 
 ### Feature
