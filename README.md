@@ -13,10 +13,10 @@ pip install pytest-playwright-async
 
 ## Example
 
-[Here](https://github.com/m9810223/playwright-async-pytest/blob/master/tests/test_playwright.py) you can find more examples.
+[Here](https://github.com/m9810223/playwright-async-pytest/blob/master/tests) you can find more examples.
 
 ```py
-# conftest.py
+# tests/conftest.py
 import asyncio
 
 import pytest_asyncio
@@ -28,19 +28,19 @@ def event_loop():  # https://pytest-asyncio.readthedocs.io/en/latest/reference/f
     loop = policy.new_event_loop()
     yield loop
     loop.close()
+
 ```
 
 ```py
-# test_playwright.py
-import pytest
+# tests/test_for_readme.py
 from playwright.async_api import Page
+import pytest
 
 
 @pytest.mark.asyncio
 async def test_page_async(page_async: Page):
+    print(f'\n{page_async = }')
     await page_async.goto('https://playwright.dev/')
-    assert (
-        await page_async.title()
-        == 'Fast and reliable end-to-end testing for modern web apps | Playwright'
-    )
+    assert 'Playwright' in await page_async.title()
+
 ```
