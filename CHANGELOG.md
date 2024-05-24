@@ -2,6 +2,13 @@
 
 
 
+## v0.17.0 (2024-05-24)
+
+### Feature
+
+* feat: update tests and docs ([`81e7dd4`](https://github.com/m9810223/playwright-async-pytest/commit/81e7dd41d7b129964338ed7359dded6a886e0a6f))
+
+
 ## v0.16.0 (2024-05-24)
 
 ### Chore
