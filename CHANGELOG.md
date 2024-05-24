@@ -2,6 +2,13 @@
 
 
 
+## v0.14.0 (2024-05-24)
+
+### Feature
+
+* feat: pytest-playwright==0.4.4 ([`00dfc98`](https://github.com/m9810223/playwright-async-pytest/commit/00dfc98adece5e028007bea7534b98c50aaefc2c))
+
+
 ## v0.13.1 (2024-05-24)
 
 ### Fix
