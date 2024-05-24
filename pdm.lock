@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:e24b3d0ae9aa8ba6b6290a5bc83349fa5795210db1bfb09919edea60b54c3b7e"
+content_hash = "sha256:0493a27cf0543b76a08936b5fff60f91c323e7f0b915fb26129b57f5c15b8228"
 
 [[package]]
 name = "appnope"
@@ -482,7 +482,7 @@ files = [
 
 [[package]]
 name = "pytest-playwright"
-version = "0.4.4"
+version = "0.5.0"
 requires_python = ">=3.8"
 summary = "A pytest wrapper with fixtures for Playwright to automate web browsers"
 dependencies = [
@@ -492,8 +492,8 @@ dependencies = [
     "python-slugify<9.0.0,>=6.0.0",
 ]
 files = [
-    {file = "pytest-playwright-0.4.4.tar.gz", hash = "sha256:5488db4cc49028491c5130af0a2bb6b1d0b222a202217f6d14491d4c9aa67ff9"},
-    {file = "pytest_playwright-0.4.4-py3-none-any.whl", hash = "sha256:df306f3a60a8631a3cfde1b95a2ed5a89203a3408dfa1154de049ca7de87c90b"},
+    {file = "pytest-playwright-0.5.0.tar.gz", hash = "sha256:f9f5ae8ade2f773e6e2cd85ec6bfff2ab287f7943108b3956fe5971324151622"},
+    {file = "pytest_playwright-0.5.0-py3-none-any.whl", hash = "sha256:b382c870384419c025d66aea14518bab71fb9e79917d4808692cde70d8c5216a"},
 ]
 
 [[package]]
