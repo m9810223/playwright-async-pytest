@@ -3,15 +3,17 @@ name = "pytest_playwright_async"
 version = "0.13.0"
 requires-python = ">=3.8"
 dependencies = [
-    "pytest-playwright",  # https://pypi.org/project/pytest-playwright/
-    "pytest-asyncio",  # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
+    # https://pypi.org/project/pytest-playwright/
+    "pytest-playwright<=0.4.4",
+    # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
+    "pytest-asyncio",
 ]
 description = "ASYNC Pytest plugin for Playwright"
 license = { text = "MIT" }
 readme = "README.md"
 
 [project.entry-points.pytest11]
-playwright_async = "pytest_playwright_async"
+playwright_async = "pytest_playwright_async.pytest_playwright_async"
 
 [project.urls]
 Homepage = "https://github.com/m9810223/playwright-async-pytest"
