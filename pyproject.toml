@@ -4,7 +4,7 @@ version = "0.13.1"
 requires-python = ">=3.8"
 dependencies = [
     # https://pypi.org/project/pytest-playwright/
-    "pytest-playwright<=0.4.4",
+    "pytest-playwright==0.4.4",
     # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
     "pytest-asyncio",
 ]
