@@ -2,6 +2,19 @@
 
 
 
+## v0.15.0 (2024-05-24)
+
+### Chore
+
+* chore: config ruff ([`931cad8`](https://github.com/m9810223/playwright-async-pytest/commit/931cad8324e0146bed0811bd2ed4e56f4b31b20b))
+
+### Feature
+
+* feat: pytest-playwright==0.5.0
+
+fix #7 ([`54c5a7b`](https://github.com/m9810223/playwright-async-pytest/commit/54c5a7b1dd48020eacb002118adb52182d9b50ea))
+
+
 ## v0.14.0 (2024-05-24)
 
 ### Feature
