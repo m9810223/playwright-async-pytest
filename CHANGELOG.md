@@ -2,6 +2,13 @@
 
 
 
+## v0.13.1 (2024-05-24)
+
+### Fix
+
+* fix: lock pytest-playwright version ([`7cc9619`](https://github.com/m9810223/playwright-async-pytest/commit/7cc96195ddf51df8e904dba737a39e18b48e51e3))
+
+
 ## v0.13.0 (2024-05-21)
 
 ### Feature
