@@ -2,6 +2,17 @@
 
 
 
+## v0.16.0 (2024-05-24)
+
+### Chore
+
+* chore: update pre-config ([`53e8f86`](https://github.com/m9810223/playwright-async-pytest/commit/53e8f869589abea02f96e400e7618bb2d26e5143))
+
+### Feature
+
+* feat: pytest-playwright&gt;=0.5.0 ([`b8be149`](https://github.com/m9810223/playwright-async-pytest/commit/b8be1498ecd1cb8ff71cc31d3367b3d506273be1))
+
+
 ## v0.15.0 (2024-05-24)
 
 ### Chore
