@@ -24,7 +24,11 @@ Source = "https://github.com/m9810223/playwright-async-pytest"
 distribution = true
 
 [tool.pdm.dev-dependencies]
-dev = ["pytest>=7.4.0", "ipython>=8.12.2", "nest-asyncio>=1.5.6"]
+dev = [
+    "pytest>=7.4.0",
+    "ipython>=8.12.2",
+    "nest-asyncio>=1.6.0",
+]
 
 [tool.pdm.scripts]
 test = "pytest"
@@ -73,4 +77,4 @@ known-local-folder = []
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-addopts = "--exitfirst --failed-first -r fEsxXp --disable-warnings --showlocals --tb=short"
+addopts = "--exitfirst --failed-first -r fEsxXp --showlocals --tb=short"
