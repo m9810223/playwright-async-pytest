@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:24c0c9f544f05e7b6e88f90539413e19951fecb6db9e899d05f62e4547132997"
+content_hash = "sha256:0a2519b9c40dec5ae5e9fe918210c67119b400822c5306d236dd2215ea5c7519"
 
 [[package]]
 name = "appnope"
@@ -298,16 +298,6 @@ dependencies = [
 files = [
     {file = "matplotlib-inline-0.1.6.tar.gz", hash = "sha256:f887e5f10ba98e8d2b150ddcf4702c1e5f8b3a20005eb0f74bfdbd360ee6f304"},
     {file = "matplotlib_inline-0.1.6-py3-none-any.whl", hash = "sha256:f1f41aab5328aa5aaea9b16d083b128102f8712542f819fe7e6a420ff581b311"},
-]
-
-[[package]]
-name = "nest-asyncio"
-version = "1.6.0"
-requires_python = ">=3.5"
-summary = "Patch asyncio to allow nested event loops"
-files = [
-    {file = "nest_asyncio-1.6.0-py3-none-any.whl", hash = "sha256:87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c"},
-    {file = "nest_asyncio-1.6.0.tar.gz", hash = "sha256:6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe"},
 ]
 
 [[package]]
