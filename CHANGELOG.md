@@ -2,6 +2,19 @@
 
 
 
+## v1.0.0 (2024-09-26)
+
+### Breaking
+
+* feat: use anyio and support sync
+
+BREAKING CHANGE: The plugin now requires anyio and nest-asyncio. ([`d03ad0c`](https://github.com/m9810223/playwright-async-pytest/commit/d03ad0c1e48402ebc39b70b11c666963c1980802))
+
+### Chore
+
+* chore: update pre-commit config ([`9c0c900`](https://github.com/m9810223/playwright-async-pytest/commit/9c0c90044c854b074e9884759763c9b3027d9d71))
+
+
 ## v0.17.0 (2024-05-24)
 
 ### Feature
