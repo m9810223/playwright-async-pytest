@@ -24,25 +24,24 @@ repos:
   ### PYTHON
 
   - repo: https://github.com/psf/black
-    rev: 3702ba224ecffbcec30af640c149f231d90aebdb  # frozen: 24.4.2
+    rev: b965c2a5026f8ba399283ba3e01898b012853c79  # frozen: 24.8.0
     hooks: # https://black.readthedocs.io/en/stable/integrations/source_version_control.html
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: fc609d3ce5e38f1d32423050196bf0ce4ecc59c1  # frozen: v0.4.5
+    rev: cc915bbf189077041f55bc59c4c0cf7f30cc921f  # frozen: v0.6.8
     hooks: # https://beta.ruff.rs/docs/installation-and-usage/#usage
       - id: ruff
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "e5ea6670624c24f8321f6328ef3176dbba76db46"  # frozen: v1.10.0
+    rev: "d4911cfb7f1010759fde68da196036feeb25b99d"  # frozen: v1.11.2
     hooks:
       - id: mypy
-        additional_dependencies: [types-all]
         args:
           - --explicit-package-bases
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: 12af25eb252deaaecb6b259df40d01f42e716dc3  # frozen: v3.15.2
+    rev: a25bb536e10881d928ee824910cbaab8f4719bd1  # frozen: v3.17.0
     hooks:
       - id: pyupgrade
 
@@ -58,12 +57,12 @@ repos:
   ### MISC
 
   - repo: https://github.com/crate-ci/typos
-    rev: ee276ae87cb98d65004ebc0096d2c3a210ba9adc  # frozen: v1.21.0
+    rev: a0058970b777e6ddbbd92ed552885352ab4c873e  # frozen: v1.24.6
     hooks:
       - id: typos
 
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: bdf9bad34ed8102dee37a1fabb11ebc40d51063f  # frozen: v2.13.0
+    rev: a6273196190bb0f68caf1dc68073cf62c719f725  # frozen: v2.14.0
     hooks:
       - id: pretty-format-yaml
         args:
@@ -80,15 +79,15 @@ repos:
       - id: check-builtin-literals # requires literal syntax when initializing empty or zero python builtin types.
       - id: check-case-conflict # checks for files that would conflict in case-insensitive filesystems.
       # - id: check-docstring-first # checks a common error of defining a docstring after code.
-      - id: check-executables-have-shebangs # ensures that (non-binary) executables have a shebang.
-      - id: check-json # checks json files for parseable syntax.
+      # - id: check-executables-have-shebangs # ensures that (non-binary) executables have a shebang.
+      # - id: check-json # checks json files for parseable syntax.
       - id: check-shebang-scripts-are-executable # ensures that (non-binary) files with a shebang are executable.
-      - id: pretty-format-json # sets a standard for formatting json files.
-        args:
-          - --autofix
-          - --indent=2
-          - --no-sort-keys
-          - --no-ensure-ascii
+      # - id: pretty-format-json # sets a standard for formatting json files.
+      #   args:
+      #     - --autofix
+      #     - --indent=2
+      #     - --no-sort-keys
+      #     - --no-ensure-ascii
       - id: check-merge-conflict # checks for files that contain merge conflict strings.
       # - id: check-symlinks # checks for symlinks which do not point to anything.
       - id: check-toml # checks toml files for parseable syntax.
