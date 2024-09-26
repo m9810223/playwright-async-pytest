@@ -6,10 +6,8 @@ import re
 
 from playwright.async_api import Page
 from playwright.async_api import expect
-import pytest
 
 
-@pytest.mark.asyncio
 async def test_has_title(page_async: Page):
     await page_async.goto('https://playwright.dev/')
 
@@ -17,7 +15,6 @@ async def test_has_title(page_async: Page):
     await expect(page_async).to_have_title(re.compile('Playwright'))
 
 
-@pytest.mark.asyncio
 async def test_get_started_link(page_async: Page):
     await page_async.goto('https://playwright.dev/')
 

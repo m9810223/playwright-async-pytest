@@ -29,9 +29,8 @@ from playwright.async_api import StorageState
 from playwright.async_api import ViewportSize
 from playwright.async_api import async_playwright
 import pytest
-import pytest_asyncio
 from pytest_playwright.pytest_playwright import _build_artifact_test_folder
-from pytest_playwright.pytest_playwright import create_guid
+from pytest_playwright.pytest_playwright import _create_guid
 from pytest_playwright.pytest_playwright import slugify
 
 
@@ -60,7 +59,7 @@ def browser_context_args_async(
     return context_args
 
 
-@pytest_asyncio.fixture
+@pytest.fixture
 async def _artifacts_recorder_async(
     request: pytest.FixtureRequest,
     playwright_async: Playwright,
@@ -77,7 +76,7 @@ async def _artifacts_recorder_async(
     await async_artifacts_recorder.did_finish_test(failed)
 
 
-@pytest_asyncio.fixture(scope='session')
+@pytest.fixture(scope='session')
 async def playwright_async() -> AsyncGenerator[Playwright, None]:
     apw = await async_playwright().start()
     yield apw
@@ -85,7 +84,7 @@ async def playwright_async() -> AsyncGenerator[Playwright, None]:
 
 
 @pytest.fixture(scope='session')
-def browser_type_async(playwright_async: Playwright, browser_name: str) -> BrowserType:
+async def browser_type_async(playwright_async: Playwright, browser_name: str) -> BrowserType:
     return getattr(playwright_async, browser_name)
 
 
@@ -102,7 +101,7 @@ def launch_browser_async(
     return launch
 
 
-@pytest_asyncio.fixture(scope='session')
+@pytest.fixture(scope='session')
 async def browser_async(
     launch_browser_async: Callable[..., Awaitable[Browser]],
 ) -> AsyncGenerator[Browser, None]:
@@ -151,7 +150,7 @@ class AsyncCreateContextCallback(Protocol):
     ) -> BrowserContext: ...
 
 
-@pytest_asyncio.fixture
+@pytest.fixture
 async def new_context_async(
     browser_async: Browser,
     browser_context_args_async: dict,
@@ -183,12 +182,12 @@ async def new_context_async(
         await context_async.close()
 
 
-@pytest_asyncio.fixture
+@pytest.fixture
 async def context_async(new_context_async: AsyncCreateContextCallback) -> BrowserContext:
     return await new_context_async()
 
 
-@pytest_asyncio.fixture
+@pytest.fixture
 async def page_async(context_async: BrowserContext) -> Page:
     return await context_async.new_page()
 
@@ -286,7 +285,7 @@ class AsyncArtifactsRecorder:
 
     async def on_will_close_browser_context(self, context_async: BrowserContext) -> None:
         if self._capture_trace:
-            trace_path = Path(self._pw_artifacts_folder.name) / create_guid()
+            trace_path = Path(self._pw_artifacts_folder.name) / _create_guid()
             await context_async.tracing.stop(path=trace_path)
             self._traces.append(str(trace_path))
         else:
@@ -295,7 +294,7 @@ class AsyncArtifactsRecorder:
         if self._pytestconfig.getoption('--screenshot') in ['on', 'only-on-failure']:
             for page in context_async.pages:
                 try:
-                    screenshot_path = Path(self._pw_artifacts_folder.name) / create_guid()
+                    screenshot_path = Path(self._pw_artifacts_folder.name) / _create_guid()
                     await page.screenshot(
                         timeout=5000,
                         path=screenshot_path,
