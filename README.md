@@ -19,25 +19,30 @@ pip install pytest-playwright-async
 # tests/conftest.py
 import asyncio
 
-import pytest_asyncio
+import nest_asyncio
+import pytest
 
 
-@pytest_asyncio.fixture(scope='session')
+@pytest.fixture(scope='session', autouse=True)
 def event_loop():  # https://pytest-asyncio.readthedocs.io/en/latest/reference/fixtures.html#fixtures
     policy = asyncio.get_event_loop_policy()
     loop = policy.new_event_loop()
+    nest_asyncio._patch_loop(loop)  # *
     yield loop
     loop.close()
+
+
+@pytest.fixture(scope='session', autouse=True)
+def anyio_backend():
+    return 'asyncio'
 
 ```
 
 ```py
 # tests/test_for_readme.py
 from playwright.async_api import Page
-import pytest
 
 
-@pytest.mark.asyncio
 async def test_page_async(page_async: Page):
     print(f'\n{page_async = }')
     await page_async.goto('https://playwright.dev/')

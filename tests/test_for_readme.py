@@ -1,8 +1,6 @@
 from playwright.async_api import Page
-import pytest
 
 
-@pytest.mark.asyncio
 async def test_page_async(page_async: Page):
     print(f'\n{page_async = }')
     await page_async.goto('https://playwright.dev/')

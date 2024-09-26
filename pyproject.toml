@@ -5,9 +5,10 @@ requires-python = ">=3.8"
 dependencies = [
     # https://pypi.org/project/pytest-playwright/
     # https://github.com/microsoft/playwright-pytest/blob/v0.5.0/pytest_playwright/pytest_playwright.py
-    "pytest-playwright>=0.5.0",
+    "pytest-playwright>=0.5.2", # https://github.com/microsoft/playwright-pytest/pull/236/files#diff-51d99e132c467c9f729b6b633a15ce5444e52872456e8e551146e0c87a694d31R582
     # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
-    "pytest-asyncio",
+    "anyio",
+    "nest-asyncio",
 ]
 description = "ASYNC Pytest plugin for Playwright"
 license = { text = "MIT" }
