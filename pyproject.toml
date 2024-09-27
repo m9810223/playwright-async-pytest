@@ -7,8 +7,6 @@ dependencies = [
     # https://github.com/microsoft/playwright-pytest/blob/v0.5.0/pytest_playwright/pytest_playwright.py
     "pytest-playwright>=0.5.2", # https://github.com/microsoft/playwright-pytest/pull/236/files#diff-51d99e132c467c9f729b6b633a15ce5444e52872456e8e551146e0c87a694d31R582
     # https://github.com/microsoft/playwright-python/blob/main/local-requirements.txt
-    "anyio",
-    "nest-asyncio",
 ]
 description = "ASYNC Pytest plugin for Playwright"
 license = { text = "MIT" }
@@ -25,7 +23,12 @@ Source = "https://github.com/m9810223/playwright-async-pytest"
 distribution = true
 
 [tool.pdm.dev-dependencies]
-dev = ["pytest>=7.4.0", "ipython>=8.12.2", "nest-asyncio>=1.5.6"]
+dev = [
+    "pytest",
+    "ipython<8.13.1",
+    "nest-asyncio",
+    "anyio<4.6.0",
+]
 
 [tool.pdm.scripts]
 test = "pytest"
