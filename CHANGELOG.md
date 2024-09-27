@@ -2,6 +2,19 @@
 
 
 
+## v1.0.1 (2024-09-27)
+
+### Fix
+
+* fix: dev deps ([`61121cd`](https://github.com/m9810223/playwright-async-pytest/commit/61121cdaaa0b6283eb1bbf3f17eb7900ba0bdbd0))
+
+### Unknown
+
+* docs ([`23425c9`](https://github.com/m9810223/playwright-async-pytest/commit/23425c9f8ff6f43ee7e0a0c4418b379e5a446749))
+
+* test ([`ad246b1`](https://github.com/m9810223/playwright-async-pytest/commit/ad246b1baf639bb1c4a5de8cf740df6ffabedd31))
+
+
 ## v1.0.0 (2024-09-26)
 
 ### Breaking
