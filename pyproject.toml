@@ -26,8 +26,9 @@ distribution = true
 dev = [
     "pytest",
     "ipython<8.13.1",
-    "nest-asyncio",
     "anyio<4.6.0",
+    "nest-asyncio",
+    "uvloop",
 ]
 
 [tool.pdm.scripts]

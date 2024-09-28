@@ -15,33 +15,33 @@ pip install pytest-playwright-async
 
 [Here](https://github.com/m9810223/playwright-async-pytest/blob/master/tests) you can find more examples.
 
+---
+
 ```py
-# tests/conftest.py
+# tests/async/conftest.py
 
-import asyncio
-
-import nest_asyncio  # pip install nest-asyncio
 import pytest
 
 
-@pytest.fixture(scope='session', autouse=True)
-def event_loop():
-    policy = asyncio.get_event_loop_policy()
-    loop = policy.new_event_loop()
-    nest_asyncio._patch_loop(loop)  # *
-    yield loop
-    loop.close()
-
-
-@pytest.fixture(scope='session', autouse=True)
-# pip install anyio
-def anyio_backend():
-    return 'asyncio'
+# install anyio
+# install uvloop
+@pytest.fixture(
+    scope='session',
+    params=[
+        # https://anyio.readthedocs.io/en/stable/testing.html#specifying-the-backends-to-run-on
+        pytest.param(('asyncio', {'use_uvloop': True}), id='asyncio+uvloop'),
+        pytest.param(('asyncio', {'use_uvloop': False}), id='asyncio'),
+        # pytest.param(('trio', {'restrict_keyboard_interrupt_to_checkpoints': True}), id='trio'),
+    ],
+    autouse=True,
+)
+def anyio_backend(request):
+    return request.param
 
 ```
 
 ```py
-# tests/test_for_readme.py
+# tests/async/test_for_readme.py
 
 from playwright.async_api import Page
 
