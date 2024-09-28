@@ -2,6 +2,13 @@
 
 
 
+## v1.1.0 (2024-09-28)
+
+### Feature
+
+* feat: support uvloop ([`42812ea`](https://github.com/m9810223/playwright-async-pytest/commit/42812ea82404c1c263684d2d30372c9bd7e0de84))
+
+
 ## v1.0.1 (2024-09-27)
 
 ### Fix
