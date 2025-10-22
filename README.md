@@ -1,6 +1,7 @@
 # Playwright Async Pytest -- ASYNC Pytest plugin for Playwright
 
 [![pypi](https://img.shields.io/pypi/v/pytest_playwright_async.svg)](https://pypi.python.org/pypi/pytest_playwright_async)
+[![pytest-playwright-async downloads](https://static.pepy.tech/badge/pytest-playwright-async/month)](https://pepy.tech/project/pytest-playwright-async)
 
 There an official playwright plugin for pytest: [PyPI](https://pypi.org/project/pytest-playwright/) / [playwright-pytest](https://github.com/microsoft/playwright-pytest) / [intro](https://playwright.dev/python/docs/intro).
 But if you need an async version, here is it!
